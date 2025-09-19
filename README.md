@@ -1,6 +1,6 @@
 # Considerations for YaHS Hi-C Scaffolder Parameters & Input Data Preparation
 Hi-C scaffolding is a versatile method to order and bridge the contigs into chromosome-scale genomic scaffolds. One of the standard computational tools for Hi-C scaffolding is ["YaHS" (Yet another Hic Scaffolding tool)](https://github.com/c-zhou/yahs), which is employed in the genome assembly pipeline provided by the Vertebrate Genome Project. \
-Here, we outline several insights for running this tool based on our experience with shark genome assembly.
+Here, we outline several insights for running this tool based on our experience with shark genome assembly ([Niwa et al., <I>PNAS</I>, 2025](https://www.pnas.org/doi/10.1073/pnas.2513676122)).
 
 ## Input preparation with HiC-Pro
 YaHS requires a BAM/BED/BIN/PA5 file as input, which records how Hi-C reads were mapped onto contigs. Mapping of Hi-C reads requires a specific strategy distinct from usual genomic read mapping due to their chimeric nature and ligation junctions. The original YaHS GitHub repository recommends the Arima Genomics' mapping pipeline, the Omni-C's mappping pipeline and HiC-Pro. We have utilized HiC-Pro for the read mapping because of its all-in-one feature, which considers MAPQ, multi-mapped reads, PCR duplicates, read-name sorting and even more it outputs a Hi-C read-pair statistics. \
